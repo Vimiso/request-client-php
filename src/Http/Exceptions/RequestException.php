@@ -10,18 +10,19 @@ class RequestException extends Exception
     /**
      * @var int
      */
-    private $statusCode = 0;
+    protected $statusCode = 0;
 
     /**
      * @var array
      */
-    private $response = [];
+    protected $response = [];
 
     /**
      * @param string $message
      * @param int $statusCode
      * @param array $response
      * @param null|\Throwable $previous
+     * @return void
      */
     public function __construct(
         $message,
@@ -59,8 +60,8 @@ class RequestException extends Exception
     {
         $className = __CLASS__;
         $message = rtrim($this->message, "\n");
-        $stackTrace = $this->getTraceAsString();
 
-        return "{$className}: Status code: [{$this->statusCode}] => {$message}\n{$stackTrace}";
+        return "{$className}: Status code: [{$this->statusCode}]"
+            . " => {$message}\n{$this->getTraceAsString()}";
     }
 }
