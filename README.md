@@ -2,6 +2,13 @@
 
 An easily extendable HTTP request client.
 
+## Features
+
+* Built on top of Guzzle.
+* Easy to use and extend.
+* Intended for API services.
+* Perfect for quick SDK creation.
+
 ## Contents
 
 * [Prerequisites](#prerequisites)
