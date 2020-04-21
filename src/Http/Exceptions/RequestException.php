@@ -58,10 +58,9 @@ class RequestException extends Exception
     public function __toString()
     {
         $className = __CLASS__;
-        $statusCode = $this->statusCode;
         $message = rtrim($this->message, "\n");
         $stackTrace = $this->getTraceAsString();
 
-        return "{$className}: Status code: [{$statusCode}] => {$message}\n{$stackTrace}";
+        return "{$className}: Status code: [{$this->statusCode}] => {$message}\n{$stackTrace}";
     }
 }
