@@ -225,7 +225,7 @@ abstract class Request
      */
     public function getPath(): string
     {
-        return $this->path;
+        return $this->path ?: '/';
     }
 
     /**
